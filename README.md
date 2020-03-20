@@ -1,6 +1,6 @@
 
 
-# ifttt-action
+# :rocket: ifttt-action
 
 <p align="center">
   <a href="https://github.com/actions/javascript-action/actions"><img alt="javscript-action status" src="https://github.com/actions/javascript-action/workflows/units-test/badge.svg"></a>
@@ -10,20 +10,14 @@ A GitHub action that triggers an [IFTTT webhooks](https://ifttt.com/maker_webhoo
 event. This is useful for example when you want to trigger a IFTTT webhook after
 your deployment succeeds.
 
+![demo](demo.gif)
+
 ## Getting Started
 
 Install the dependencies  
 ```bash
 $ npm install
 ```
-
-## Change action.yml
-
-The action.yml contains defines the inputs and output for your action.
-
-Update the action.yml with your name, description, inputs and outputs for your action.
-
-See the [documentation](https://help.github.com/en/articles/metadata-syntax-for-github-actions)
 
 ## Change the Code
 
@@ -86,7 +80,7 @@ All set! Your action is now published! :rocket:
 
 ## Usage
 
-You can now consume the action by referencing the v1 branch
+Update the action.yml with your ifttt event and key for your action. You can now consume the action by referencing the v1 branch
 
 See [action.yml](https://github.com/awais786327/ifttt-action/blob/master/action.yml)
 
@@ -97,3 +91,6 @@ steps:
       event: your-webhook-event
       key: your-webhook-secret-key
 ```
+
+## LICENSE 📋
+[Licensed under the MIT License (the "License")](./LICENSE);
