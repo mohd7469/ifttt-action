@@ -12,6 +12,8 @@ on:
 #      - 'releases/*'
 
 jobs:
+  - uses: actions/checkout@v1
+
   # unit tests
 #  units:
 #    runs-on: ubuntu-latest

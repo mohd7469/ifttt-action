@@ -901,9 +901,10 @@ async function run() {
     const key = core.getInput('key', { required: true });
     const url = `https://maker.ifttt.com/trigger/${event}/with/key/${key}`;
     const {eventName, payload} = github.context;
+    const {issue} = payload;
 
     console.log('eventName ', eventName);
-    console.log('github payload ', payload);
+    console.log('github payload : ', issue);
 
     const PayloadSchema = {
       issueCreatedBy: 'awais786327',
@@ -917,10 +918,10 @@ async function run() {
       value3: PayloadSchema['issueDescription'],
     };
 
-    const response = await axios.post(url, iftttPayload);
-    console.log('axios response ', response);
+    const {status, statusText, data} = await axios.post(url, iftttPayload);
+    console.log('response : ', statusText, status , data);
 
-    return { response };
+    return { statusText, status, data };
   }
   catch (error) {
     core.setFailed(error.message);
