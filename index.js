@@ -8,22 +8,23 @@ async function run() {
     const event = core.getInput('event', { required: true });
     const key = core.getInput('key', { required: true });
     const url = `https://maker.ifttt.com/trigger/${event}/with/key/${key}`;
-    // const {eventName, payload} = github.context;
+    const {eventName, payload} = github.context;
 
-    console.log('Github Context ', github.context);
-    console.log('\n');
-    console.log('event ', event);
-    console.log('key ', key);
-    console.log('url ', url);
-    console.log('\n');
+    console.log('Github Context ', eventName, payload);
 
-    const payload = {
-      value1: '',
-      value2: '',
-      value3: '',
+    const PayloadSchema = {
+      issueCreatedBy: 'awais786327',
+      issueTitle: 'ng serve not working',
+      issueDescription: 'Got an error while ng serve'
     };
 
-    console.log('payload ', payload);
+    const iftttPayload = {
+      value1: PayloadSchema['issueCreatedBy'],
+      value2: PayloadSchema['issueTitle'],
+      value3: PayloadSchema['issueDescription'],
+    };
+
+    console.log('payload ', iftttPayload);
     console.log('\n');
 
     const config = {
