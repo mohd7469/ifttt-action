@@ -1,6 +1,6 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
-const got = require('got');
+const axios = require('axios');
 
 async function run() {
   console.log('----------------------------------------------------------');
@@ -25,14 +25,10 @@ async function run() {
     console.log('iftttPayload ', iftttPayload);
     console.log('\n');
 
-    const config = {
-      json: iftttPayload,
-    };
+    const { response } = await axios.post(url, iftttPayload);
+    console.log('response ', response);
 
-    const { statusCode, body } = await got.post(url, config);
-    console.log('statusCode, body ', statusCode, body);
-
-    return { statusCode, body };
+    return { response };
   }
   catch (error) {
     core.setFailed(error.message);
