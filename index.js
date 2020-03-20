@@ -26,7 +26,7 @@ async function run() {
     console.log('\n');
 
     const { response } = await axios.post(url, iftttPayload);
-    console.log('response ', response);
+    console.log('axios response ', response);
 
     return { response };
   }
