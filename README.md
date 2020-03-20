@@ -1,37 +1,20 @@
 
+
+# ifttt-action
+
 <p align="center">
   <a href="https://github.com/actions/javascript-action/actions"><img alt="javscript-action status" src="https://github.com/actions/javascript-action/workflows/units-test/badge.svg"></a>
 </p>
 
-# Create a JavaScript Action
+A GitHub action that triggers an [IFTTT webhooks](https://ifttt.com/maker_webhooks)
+event. This is useful for example when you want to trigger a IFTTT webhook after
+your deployment succeeds.
 
-Use this template to bootstrap the creation of a JavaScript action.:rocket:
-
-This template includes tests, linting, a validation workflow, publishing, and versioning guidance.  
-
-If you are new, there's also a simpler introduction.  See the [Hello World JavaScript Action](https://github.com/actions/hello-world-javascript-action)
-
-## Create an action from this template
-
-Click the `Use this Template` and provide the new repo details for your action
-
-## Code in Master
+## Getting Started
 
 Install the dependencies  
 ```bash
 $ npm install
-```
-
-Run the tests :heavy_check_mark:  
-```bash
-$ npm test
-
- PASS  ./index.test.js
-  ✓ throws invalid number (3ms)
-  ✓ wait 500 ms (504ms)
-  ✓ test runs (95ms)
-
-...
 ```
 
 ## Change action.yml
@@ -93,22 +76,24 @@ $ git checkout -b v1
 $ git commit -a -m "v1 release"
 ```
 
+Just push your action 
+
 ```bash
 $ git push origin v1
 ```
 
-Your action is now published! :rocket: 
-
-See the [versioning documentation](https://github.com/actions/toolkit/blob/master/docs/action-versioning.md)
+All set! Your action is now published! :rocket: 
 
 ## Usage
 
 You can now consume the action by referencing the v1 branch
 
-```yaml
-uses: actions/javascript-action@v1
-with:
-  milliseconds: 1000
-```
+See [action.yml](https://github.com/awais786327/ifttt-action/blob/master/action.yml)
 
-See the [actions tab](https://github.com/actions/javascript-action/actions) for runs of this action! :rocket:
+```yaml
+steps:
+  - uses: awais786327/ifttt-action@v1
+    with:
+      event: your-webhook-event
+      key: your-webhook-secret-key
+```
