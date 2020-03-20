@@ -902,6 +902,9 @@ async function run() {
     const url = `https://maker.ifttt.com/trigger/${event}/with/key/${key}`;
     const {eventName, payload} = github.context;
 
+    console.log('eventName ', eventName);
+    console.log('github payload ', payload);
+
     const PayloadSchema = {
       issueCreatedBy: 'awais786327',
       issueTitle: 'ng serve not working',
@@ -914,10 +917,7 @@ async function run() {
       value3: PayloadSchema['issueDescription'],
     };
 
-    console.log('iftttPayload ', iftttPayload);
-    console.log('\n');
-
-    const { response } = await axios.post(url, iftttPayload);
+    const response = await axios.post(url, iftttPayload);
     console.log('axios response ', response);
 
     return { response };
