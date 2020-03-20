@@ -1,21 +1,43 @@
 const core = require('@actions/core');
-const wait = require('./wait');
+const github = require('@actions/github');
+const got = require('got');
 
-
-// most @actions toolkit packages have async methods
 async function run() {
-  try { 
-    const ms = core.getInput('milliseconds');
-    console.log(`Waiting ${ms} milliseconds ...`)
+  console.log('----------------------------------------------------------');
+  try {
+    const event = core.getInput('event', { required: true });
+    const key = core.getInput('key', { required: true });
+    const url = `https://maker.ifttt.com/trigger/${event}/with/key/${key}`;
+    // const {eventName, payload} = github.context;
 
-    core.debug((new Date()).toTimeString())
-    await wait(parseInt(ms));
-    core.debug((new Date()).toTimeString())
+    console.log('Github Context ', github.context);
+    console.log('\n');
+    console.log('event ', event);
+    console.log('key ', key);
+    console.log('url ', url);
+    console.log('\n');
 
-    core.setOutput('time', new Date().toTimeString());
-  } 
+    const payload = {
+      value1: '',
+      value2: '',
+      value3: '',
+    };
+
+    console.log('payload ', payload);
+    console.log('\n');
+
+    const config = {
+      json: payload,
+    };
+
+    const { statusCode, body } = await got.post(url, config);
+    console.log('statusCode, body ', statusCode, body);
+
+    return { statusCode, body };
+  }
   catch (error) {
     core.setFailed(error.message);
+    throw error;
   }
 }
 

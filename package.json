@@ -1,7 +1,7 @@
 {
-  "name": "javascript-action",
+  "name": "ifttt-action",
   "version": "1.0.0",
-  "description": "JavaScript Action Template",
+  "description": "GitHub action that triggers an IFTTT webhooks event",
   "main": "index.js",
   "scripts": {
     "lint": "eslint index.js",
@@ -17,14 +17,16 @@
     "Actions",
     "JavaScript"
   ],
-  "author": "GitHub",
-  "license": "MIT",
+  "author": "awais786327",
+  "license": "ISC",
   "bugs": {
     "url": "https://github.com/actions/javascript-action/issues"
   },
   "homepage": "https://github.com/actions/javascript-action#readme",
   "dependencies": {
-    "@actions/core": "^1.1.1"
+    "@actions/core": "^1.2.3",
+    "@actions/github": "^2.1.1",
+    "got": "9.6.0"
   },
   "devDependencies": {
     "@zeit/ncc": "^0.20.5",

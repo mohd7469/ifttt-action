@@ -1,10 +1,12 @@
-name: "units-test"
-on:
-  pull_request:
-  push:
-    branches:
-      - master
-      - 'releases/*'
+name: "CI Setup for IFTTT Webhook"
+
+on: [push, issues]
+#on:
+#  pull_request:
+#  push:
+#    branches:
+#      - master
+#      - 'releases/*'
 
 jobs:
   # unit tests
@@ -23,3 +25,5 @@ jobs:
     - uses: ./
       with:
         milliseconds: 1000
+        event: "github_issue"
+        key: "EoNxVmkmo3cxJQct-8MvT"

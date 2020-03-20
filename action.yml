@@ -1,13 +1,22 @@
-name: 'Wait'
-description: 'Wait a designated number of milliseconds'
+name: 'GitHub Action for IFTTT'
+author: 'Muhammad Awais'
+description: 'Triggers an IFTTT webhooks event'
 inputs:
   milliseconds:  # id of input
     description: 'number of milliseconds to wait'
     required: true
     default: '1000'
-outputs:
-  time: # output will be available to future steps 
-    description: 'The message to output'
+  event:
+    description: 'The name of the event'
+    required: true
+    default: 'github_issue'
+  key:
+    description: 'Your secret IFTTT webhooks key'
+    required: true
+    default: 'EoNxVmkmo3cxJQct-8MvT'
 runs:
   using: 'node12'
   main: 'dist/index.js'
+branding:
+  color: 'gray-dark'
+  icon: 'list'
