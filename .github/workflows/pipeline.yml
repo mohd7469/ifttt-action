@@ -2,7 +2,7 @@ name: "CI Setup for IFTTT Webhook"
 
 on:
   issues:
-    types: [opened, edited]
+    types: [opened]
 
 #on:
 #  pull_request:
