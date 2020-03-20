@@ -11,6 +11,8 @@ async function run() {
     const octokit = github.context;
     const {issue} = octokit.payload;
 
+    console.log('issue : ', issue.html_url);
+
     const PayloadSchema = {
       issueCreatedBy: issue.user.login,
       issueTitle: `#${issue.number} ${issue.title}`,
