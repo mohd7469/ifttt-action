@@ -1,7 +1,6 @@
-node_modules/
 
-# Editors
-.vscode
+# Default ignored files
+/workspace.xml
 
 # Logs
 logs
@@ -9,6 +8,13 @@ logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# System files
+.idea
+wbot-linux
+wbot-macos
+wbot-win.exe
+*.zip
 
 # Runtime data
 pids
@@ -37,7 +43,8 @@ bower_components
 # Compiled binary addons (https://nodejs.org/api/addons.html)
 build/Release
 
-# Other Dependency directories
+# Dependency directories
+node_modules/
 jspm_packages/
 
 # TypeScript v1 declaration files
@@ -63,3 +70,6 @@ typings/
 
 # next.js build output
 .next
+ChromeSession*
+win*
+chromium-data
