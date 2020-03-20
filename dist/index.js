@@ -1142,8 +1142,6 @@ async function run() {
     const url = `https://maker.ifttt.com/trigger/${event}/with/key/${key}`;
     const {eventName, payload} = github.context;
 
-    console.log('Github Context ', eventName, payload);
-
     const PayloadSchema = {
       issueCreatedBy: 'awais786327',
       issueTitle: 'ng serve not working',
@@ -1156,11 +1154,11 @@ async function run() {
       value3: PayloadSchema['issueDescription'],
     };
 
-    console.log('payload ', iftttPayload);
+    console.log('iftttPayload ', iftttPayload);
     console.log('\n');
 
     const config = {
-      json: payload,
+      json: iftttPayload,
     };
 
     const { statusCode, body } = await got.post(url, config);
