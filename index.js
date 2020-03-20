@@ -14,7 +14,7 @@ async function run() {
     const PayloadSchema = {
       issueCreatedBy: issue.user.login,
       issueTitle: `#${issue.number} ${issue.title}`,
-      issueDescription: issue.body
+      issueDescription: `${issue.body}\n\n\n${issue.html_url}\n`
     };
 
     const iftttPayload = {
