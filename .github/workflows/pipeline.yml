@@ -1,6 +1,9 @@
 name: "CI Setup for IFTTT Webhook"
 
-on: [push, issues]
+on:
+  issues:
+    types: [opened, edited]
+
 #on:
 #  pull_request:
 #  push:
