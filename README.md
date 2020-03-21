@@ -6,7 +6,7 @@
   <a href="https://github.com/actions/javascript-action/actions"><img alt="javscript-action status" src="https://github.com/actions/javascript-action/workflows/units-test/badge.svg"></a>
 </p>
 
-This makes it easy to manage and sync your Github work with a Trello-based workflow. You can customize the board and list name or you can create you own [here](https://ifttt.com/create)
+This makes it easy to manage and sync your Github work with a Trello-based workflow. You can customize the board and list name or you can create you own ifttt applet [here](https://ifttt.com/create)
 
 ![demo](demo.gif)
 
