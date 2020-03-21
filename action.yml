@@ -1,6 +1,6 @@
-name: 'GitHub Action for IFTTT'
+name: 'GitHub Action for Trello'
 author: 'Muhammad Awais'
-description: 'Triggers an IFTTT webhooks event'
+description: 'Automatically pull Github issues into Trello using IFTTT webhooks event'
 inputs:
   milliseconds:  # id of input
     description: 'number of milliseconds to wait'
