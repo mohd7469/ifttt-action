@@ -2,8 +2,13 @@
 
 # :rocket: ifttt-action
 
-<p align="center">
-  <a href="https://github.com/actions/javascript-action/actions"><img alt="javscript-action status" src="https://github.com/actions/javascript-action/workflows/units-test/badge.svg"></a>
+<p>
+  <a href="https://github.com/actions/javascript-action/actions">
+    <img alt="javscript-action status" src="https://github.com/actions/javascript-action/workflows/units-test/badge.svg">
+  </a>
+  <a href="https://github.com/actions/javascript-action/actions">
+    <img alt="javscript-action status" src="https://github.com/awais786327/ifttt-action/workflows/CI%20Setup%20for%20IFTTT%20Webhook/badge.svg">
+  </a>
 </p>
 
 GitHub action that pull Github Issues into Trello by simply trigger an IFTTT webhook event. This makes it easy to manage and sync your Github work with a Trello-based workflow. You can customize the board and list name or you can create you own ifttt applet [here](https://ifttt.com/create)
